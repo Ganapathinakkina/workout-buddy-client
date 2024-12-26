@@ -1,0 +1,157 @@
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background-color: black;
+    padding: 50px;
+}
+
+.footerLogo {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerLogo .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.footerLogo .logo img {
+    width: 40px;
+    height: 28px;
+}
+
+.footerLogo .logo a {
+    font-size: 25px;
+    font-weight: 600;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(to right, rgba(154, 108, 50, 255), rgba(232, 217, 140, 255),
+            rgba(149, 101, 44, 255));
+    color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+
+.footerContent {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footerContent .contentTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContent .contentTitle h2 {
+    font-size: 24px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.footerContent .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.footerContent .content .providings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: justify;
+}
+
+.footerContent .content .providings p {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    transition: 0.2s;
+}
+.footerContent .content .providings p:hover {
+    transform: scale(1.05);
+}
+
+
+.footerBtn {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerBtn a {
+    width: 80%;
+}
+
+.footerBtn a button {
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, rgba(154, 108, 50, 255), rgba(232, 217, 140, 255),
+            rgba(149, 101, 44, 255));
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.footerBtn a button:hover {
+transform: scale(1.05);
+}
+
+@media(max-width:800px) {
+    .footer {
+        padding: 30px;
+    }
+    .footerLogo .logo a {
+        font-size: 22px;
+    }
+    .footerContent .content .providings p {
+        font-size: 14px;
+    }
+}
+
+@media(max-width:700px) {
+    .footer {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .footerLogo {
+        width: 100%;
+    }
+    .footerLogo .logo a {
+        font-size: 24px;
+    }
+
+    .footerContent {
+        width: 100%;
+    }
+
+    .footerContent .content {
+        justify-content: space-evenly;
+        gap: 0px;
+    }
+
+    .footerBtn {
+        width: 100%;
+    }
+
+    .footerBtn a {
+        width: 60%;
+    }
+}

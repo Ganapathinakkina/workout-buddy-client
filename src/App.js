@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom"
+import { useAuthContext } from './Hooks/useAuthContext';
+
+import Home from "./Pages/Home/Home"
+import Navbar from './Components/Navbar/Navbar';
+import Signup from './Pages/Signup/Signup';
+import Login from './Pages/Login/Login';
+import Entry from './Pages/EntryPage/Entry';
+import FirstHome from './Pages/FirstHome/FirstHome';
+import Footer from './Components/Footer/Footer';
+
 
 function App() {
+  const { user, isAuthLoaded } = useAuthContext();
+
+  if (!isAuthLoaded) {
+      return <div>Loading...</div>;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+      <Router>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Entry/>}/>
+          <Route path="/firsthome" element={user ? <FirstHome/> : <Navigate to="/login"/>}/>
+          <Route path="/signup" element={!user ? <Signup/> : <Navigate to= "/firsthome"/>}/>
+          <Route path="/login" element={!user ? <Login/> : <Navigate to= "/firsthome"/>}/>
+          <Route path='/home' element={user ? <Home/> : <Navigate to= "/"/>}/>
+        </Routes>
+        <Footer/>
+      </Router>
+      
     </div>
   );
 }
