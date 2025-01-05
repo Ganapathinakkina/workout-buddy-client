@@ -9,6 +9,7 @@ import Login from './Pages/Login/Login';
 import Entry from './Pages/EntryPage/Entry';
 import FirstHome from './Pages/FirstHome/FirstHome';
 import Footer from './Components/Footer/Footer';
+import UserInputs from './Pages/UserInputs/UserInputs';
 
 
 function App() {
@@ -27,9 +28,12 @@ function App() {
           <Route path="/signup" element={!user ? <Signup/> : <Navigate to= "/firsthome"/>}/>
           <Route path="/login" element={!user ? <Login/> : <Navigate to= "/firsthome"/>}/>
           <Route path='/home' element={user ? <Home/> : <Navigate to= "/"/>}/>
-        </Routes>
-        <Footer/>
+          <Route path="userinputs" element={<UserInputs/>}/>
+        </Routes> 
+        {/* <Footer/> */}
       </Router>
+
+      
       
     </div>
   );
