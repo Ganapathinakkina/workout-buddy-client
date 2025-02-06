@@ -10,6 +10,7 @@ import Entry from './Pages/EntryPage/Entry';
 import FirstHome from './Pages/FirstHome/FirstHome';
 import Footer from './Components/Footer/Footer';
 import UserInputs from './Pages/UserInputs/UserInputs';
+import Suggestions from './Pages/WorkoutSuggestions/Suggestions';
 
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
           <Route path="/login" element={!user ? <Login/> : <Navigate to= "/firsthome"/>}/>
           <Route path='/home' element={user ? <Home/> : <Navigate to= "/"/>}/>
           <Route path="userinputs" element={<UserInputs/>}/>
+          <Route path="/suggestions" element={<Suggestions/>}/>
+
         </Routes> 
         {/* <Footer/> */}
       </Router>

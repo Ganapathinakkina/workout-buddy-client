@@ -14,9 +14,7 @@ export const authReducer = (state, action) => {
 }
 
 const AuthContextProvider = ({children}) => {
-    const [state, dispatch] = useReducer(authReducer, {
-        user: null
-    });
+    const [state, dispatch] = useReducer(authReducer, { user: null} );
 
     const [isAuthLoaded, setIsAuthLoaded] = useState(false); // Loading state
 

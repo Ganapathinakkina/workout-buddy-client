@@ -29,11 +29,11 @@ const WorkoutContext = ({ children }) => {
 
 
   //POST REQUEST STATE
-  const [form, setForm] = useState({
-    title: "",
+  const [form, setForm] = useState(
+   { title: "",
     reps: "",
-    load: "",
-  })
+    load: "",}
+  )
 
 
   //DELETE REQUEST FUNCTION
@@ -64,9 +64,14 @@ const WorkoutContext = ({ children }) => {
   }
 
 
+  const [workoutSuggestions, setWorkoutSuggestions]=useState([]);
+
+
   return (
     <>
-      <Data.Provider value={{ workouts, setWorkouts, getWorkouts, form, setForm, deleteWorkout, updateForm, setUpdateForm, toggleUpdate }}>
+      <Data.Provider value={{ workouts, setWorkouts, getWorkouts, form, setForm,
+                             deleteWorkout, updateForm, setUpdateForm, toggleUpdate,
+                             workoutSuggestions, setWorkoutSuggestions }}>
         {children}
       </Data.Provider>
     </>

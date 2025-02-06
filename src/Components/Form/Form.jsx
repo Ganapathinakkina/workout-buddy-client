@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import axios from "axios"
 import { Data } from "../../Context/WorkoutContext"
 import { useAuthContext } from "../../Hooks/useAuthContext"
@@ -7,7 +7,7 @@ import "./FormStyle.css"
 
 const Form = () => {
 
-  const {user} = useAuthContext(); 
+  const { user } = useAuthContext();
 
   const { form, setForm, getWorkouts, workouts, setWorkouts, updateForm, setUpdateForm } = useContext(Data)
 
@@ -69,6 +69,24 @@ const Form = () => {
 
   }
 
+  // IMAGE UPLOAD BLOB
+  const [base64Image, setBase64Image] = useState(null);
+
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        const base64String = reader.result.split(",")[1];
+        setBase64Image(`data:${file.type};base64,${base64String}`);
+        console.log(base64String);
+      };
+
+      reader.readAsDataURL(file);
+    }
+  };
+
 
 
   return (
@@ -91,6 +109,19 @@ const Form = () => {
             <div className="field">
               <label htmlFor="">Load(in KG): </label>
               <input type="tel" name='load' value={form.load} onChange={updateFormField} />
+            </div>
+
+            <div >
+              {/* <h2>Image Upload & Conversion</h2> */}
+
+              <input type="file" accept="image/*" onChange={handleFileUpload} />
+
+              {base64Image && (
+                <div>
+                  <h3>Base64 Image</h3>
+                  <img src={base64Image} alt="Uploaded Base64" style={{ maxWidth: "200px", margin: "10px" }} />
+                </div>
+              )}
             </div>
 
             <button>Submit</button>
