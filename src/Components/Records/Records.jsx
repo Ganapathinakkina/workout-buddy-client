@@ -34,7 +34,7 @@ const Records = () => {
                 <GrEdit />
                 <p>Edit</p>
               </button>{" "}
-              <button className="delete-btn" onClick={() => deleteWorkout(item._id)}>
+              <button className="delete-btn" onClick={() => deleteWorkout(item._id, item.isCustomWorkout)}>
                 <RiDeleteBin5Line />
                 <p>Delete</p>
               </button>

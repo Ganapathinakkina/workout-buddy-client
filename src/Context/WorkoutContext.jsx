@@ -1,20 +1,25 @@
 import { createContext, useCallback, useState } from "react"
 import axios from "axios"
-import {useAuthContext} from "../Hooks/useAuthContext"
+import { useAuthContext } from "../Hooks/useAuthContext"
+import { data } from "react-router-dom"
+import { useLogout } from "../Hooks/useLogout"
 
 
 export const Data = createContext()
 
 
 
+
 const WorkoutContext = ({ children }) => {
-  const {user} = useAuthContext()
-  
+  const { user } = useAuthContext()
+  const { logout } = useLogout()
+
 
   //GET REQUEST STATE
   const [workouts, setWorkouts] = useState(null)
 
   const getWorkouts = useCallback(async () => {
+
     try {
       const response = await axios.get("http://localhost:5000/api/workouts", {
         headers: {
@@ -22,29 +27,28 @@ const WorkoutContext = ({ children }) => {
         },
       });
       setWorkouts(response.data);
-    } catch (err) {
-      console.error("Failed to fetch workouts:", err);
+    } catch (error) {
+      console.error("Failed to fetch workouts:", error);
+
+      if (error.response?.status === 401) {
+        logout();
+      } else {
+        console.error("API Error:", error);
+      }
     }
   }, [user]); // Memoized function depends only on 'user'
 
 
   //POST REQUEST STATE
   const [form, setForm] = useState(
-   { title: "",
-    reps: "",
-    load: "",}
+    {
+      title: "",
+      reps: "",
+      load: "",
+      isCustomWorkout: true,
+    }
   )
 
-
-  //DELETE REQUEST FUNCTION
-  const deleteWorkout = async (_id) => {
-    await axios.delete(`http://localhost:5000/api/workouts/${_id}`, {
-      headers: {
-        "Authorization": `Bearer ${user.token}`
-      }
-    });
-    getWorkouts()
-  }
 
   //UPDATE REQUEST STATE
   const [updateForm, setUpdateForm] = useState({
@@ -52,6 +56,7 @@ const WorkoutContext = ({ children }) => {
     title: "",
     reps: "",
     load: "",
+    isCustomWorkout: false
   })
 
   const toggleUpdate = (item) => {
@@ -60,18 +65,44 @@ const WorkoutContext = ({ children }) => {
       title: item.title,
       reps: item.reps,
       load: item.load,
+      isCustomWorkout: item.isCustomWorkout,
     })
   }
 
 
-  const [workoutSuggestions, setWorkoutSuggestions]=useState([]);
+
+  //DELETE REQUEST FUNCTION
+  const deleteWorkout = async (_id, isCustomWorkout) => {
+    const payload = { workoutId: _id, isCustomWorkout: isCustomWorkout };
+    try {
+      await axios.delete(`http://localhost:5000/api/workouts`, {
+        data: payload,
+        headers: {
+          "Authorization": `Bearer ${user.token}`
+        }
+      });
+      getWorkouts()
+    }
+    catch (error) {
+      if (error.response?.status === 401) {
+        logout();
+      } else {
+        console.error("API Error:", error);
+      }
+    }
+  }
+
+
+  const [workoutSuggestions, setWorkoutSuggestions] = useState([]);
 
 
   return (
     <>
-      <Data.Provider value={{ workouts, setWorkouts, getWorkouts, form, setForm,
-                             deleteWorkout, updateForm, setUpdateForm, toggleUpdate,
-                             workoutSuggestions, setWorkoutSuggestions }}>
+      <Data.Provider value={{
+        workouts, setWorkouts, getWorkouts, form, setForm,
+        deleteWorkout, updateForm, setUpdateForm, toggleUpdate,
+        workoutSuggestions, setWorkoutSuggestions
+      }}>
         {children}
       </Data.Provider>
     </>

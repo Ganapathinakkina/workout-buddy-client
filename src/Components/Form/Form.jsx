@@ -4,10 +4,12 @@ import { Data } from "../../Context/WorkoutContext"
 import { useAuthContext } from "../../Hooks/useAuthContext"
 
 import "./FormStyle.css"
+import { useLogout } from "../../Hooks/useLogout"
 
 const Form = () => {
 
   const { user } = useAuthContext();
+  const { logout } = useLogout()
 
   const { form, setForm, getWorkouts, workouts, setWorkouts, updateForm, setUpdateForm } = useContext(Data)
 
@@ -23,18 +25,26 @@ const Form = () => {
 
   const createWorkout = async (e) => {
     e.preventDefault();
-    const response = await axios.post("http://localhost:5000/api/workouts", form, {
-      headers: {
-        "Authorization": `Bearer ${user.token}`
+    try {
+      const response = await axios.post("http://localhost:5000/api/workouts", form, {
+        headers: {
+          "Authorization": `Bearer ${user.token}`
+        }
+      });
+      setWorkouts([...workouts, response.data])
+      setForm({
+        title: "",
+        reps: "",
+        load: "",
+      });
+      getWorkouts()
+    } catch (error) {
+      if (error.response?.status === 401) {
+        logout();
+      } else {
+        console.error("API Error:", error);
       }
-    });
-    setWorkouts([...workouts, response.data])
-    setForm({
-      title: "",
-      reps: "",
-      load: "",
-    });
-    getWorkouts()
+    }
   }
 
   //UPDATE FORM FUNCTION
@@ -50,42 +60,51 @@ const Form = () => {
   const updateWorkout = async (e) => {
     e.preventDefault();
 
-    const { _id, title, reps, load } = updateForm;
+    const { _id, title, reps, load, isCustomWorkout } = updateForm;
 
-    await axios.patch(`http://localhost:5000/api/workouts/${_id}`, { title, reps, load }, {
-      headers: {
-        "Authorization": `Bearer ${user.token}`
+    try {
+      await axios.patch(`http://localhost:5000/api/workouts/${_id}`, { title, reps, load, isCustomWorkout }, {
+        headers: {
+          "Authorization": `Bearer ${user.token}`
+        }
+      });
+
+      getWorkouts();
+
+      setUpdateForm({
+        _id: null,
+        title: "",
+        reps: "",
+        load: "",
+        isCustomWorkout: false
+      })
+    }
+    catch (error) {
+      if (error.response?.status === 401) {
+        logout();
+      } else {
+        console.error("API Error:", error);
       }
-    });
-
-    getWorkouts();
-
-    setUpdateForm({
-      _id: null,
-      title: "",
-      reps: "",
-      load: "",
-    })
-
+    }
   }
 
-  // IMAGE UPLOAD BLOB
-  const [base64Image, setBase64Image] = useState(null);
+  // // IMAGE UPLOAD BLOB
+  // const [base64Image, setBase64Image] = useState(null);
 
-  const handleFileUpload = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
+  // const handleFileUpload = (event) => {
+  //   const file = event.target.files[0];
+  //   if (file) {
+  //     const reader = new FileReader();
 
-      reader.onload = () => {
-        const base64String = reader.result.split(",")[1];
-        setBase64Image(`data:${file.type};base64,${base64String}`);
-        console.log(base64String);
-      };
+  //     reader.onload = () => {
+  //       const base64String = reader.result.split(",")[1];
+  //       setBase64Image(`data:${file.type};base64,${base64String}`);
+  //       console.log(base64String);
+  //     };
 
-      reader.readAsDataURL(file);
-    }
-  };
+  //     reader.readAsDataURL(file);
+  //   }
+  // };
 
 
 
@@ -111,8 +130,8 @@ const Form = () => {
               <input type="tel" name='load' value={form.load} onChange={updateFormField} />
             </div>
 
-            <div >
-              {/* <h2>Image Upload & Conversion</h2> */}
+            {/* <div >
+              <h2>Image Upload & Conversion</h2> 
 
               <input type="file" accept="image/*" onChange={handleFileUpload} />
 
@@ -122,7 +141,7 @@ const Form = () => {
                   <img src={base64Image} alt="Uploaded Base64" style={{ maxWidth: "200px", margin: "10px" }} />
                 </div>
               )}
-            </div>
+            </div> */}
 
             <button>Submit</button>
 

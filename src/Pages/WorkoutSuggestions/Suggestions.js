@@ -3,12 +3,14 @@ import { Data } from '../../Context/WorkoutContext'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuthContext } from '../../Hooks/useAuthContext';
+import { useLogout } from '../../Hooks/useLogout';
 
 const Suggestions = () => {
     const { workoutSuggestions } = useContext(Data);
     const [selections, setSelections] = useState([]);
     const navigation = useNavigate();
     const { user } = useAuthContext();
+     const { logout } = useLogout();
 
     const onSelectionHandler = (sId) => {
         setSelections((prevSelections) =>
@@ -42,16 +44,25 @@ const Suggestions = () => {
             // ---------- Debugging purpose ----------
             console.log("Payload:", payload);
 
+            try {
+                const response = await axios.put("http://localhost:5000/api/user/update-user-workouts", payload, {
+                    headers: {
+                        "Authorization": `Bearer ${user.token}`
+                    }
+                })
 
-            const response = await axios.put("http://localhost:5000/api/user/update-user-workouts", payload, {
-                headers: {
-                    "Authorization": `Bearer ${user.token}`
+                alert("Your suggestions are added to your collections.");
+
+                navigation("/home");
+            }
+            catch (error) {
+                if (error.response?.status === 401) {
+                    logout();
+                } else {
+                    console.error("API Error:", error);
                 }
-            })
+            }
 
-            alert("Your suggestions are added to your collections.");
-
-            navigation("/home");
         }
 
     }

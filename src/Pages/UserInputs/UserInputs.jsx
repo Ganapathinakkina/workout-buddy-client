@@ -3,13 +3,15 @@ import "./UserInputStyle.css"
 import axios from "axios"
 import { useAuthContext } from "../../Hooks/useAuthContext"
 import { Data } from "../../Context/WorkoutContext"
-import { useNavigate } from "react-router-dom"
+import { Navigate, useNavigate } from "react-router-dom"
+import { useLogout } from "../../Hooks/useLogout"
 
 
 const UserInputs = () => {
 
     const { user } = useAuthContext();
     const navigation = useNavigate();
+    const { logout } = useLogout()
 
     const { workoutSuggestions, setWorkoutSuggestions } = useContext(Data);
 
@@ -32,15 +34,28 @@ const UserInputs = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("data" + JSON.stringify(userInputData));
-        const response = await axios.post("http://localhost:5000/api/user/userinputs", userInputData, {
-            headers: {
-                "Authorization": `Bearer ${user.token}`
-            }
-        })
 
-        await setWorkoutSuggestions(response.data);
-        console.log(workoutSuggestions);
-        navigation("/suggestions");
+
+        try {
+            const response = await axios.post("http://localhost:5000/api/user/userinputs", userInputData, {
+                headers: {
+                    "Authorization": `Bearer ${user.token}`
+                }
+            })
+            await setWorkoutSuggestions(response.data);
+            console.log(workoutSuggestions);
+            navigation("/suggestions");
+        } catch (error) {
+            if (error.response?.status === 401) {
+                logout();
+            } else {
+                console.error("API Error:", error);
+            }
+        }
+
+
+
+
     }
 
     return (

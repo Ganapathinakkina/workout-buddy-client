@@ -26,10 +26,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Entry/>}/>
           <Route path="/firsthome" element={user ? <FirstHome/> : <Navigate to="/login"/>}/>
-          <Route path="/signup" element={!user ? <Signup/> : <Navigate to= "/firsthome"/>}/>
+          <Route path="/signup" element={!user ? <Signup/> : <Navigate to= "/userinputs"/>}/>
           <Route path="/login" element={!user ? <Login/> : <Navigate to= "/firsthome"/>}/>
           <Route path='/home' element={user ? <Home/> : <Navigate to= "/"/>}/>
-          <Route path="userinputs" element={<UserInputs/>}/>
+          <Route path="/userinputs" element={ user ? <UserInputs/> : <Navigate to= "/login"/> }/>
           <Route path="/suggestions" element={<Suggestions/>}/>
 
         </Routes> 
