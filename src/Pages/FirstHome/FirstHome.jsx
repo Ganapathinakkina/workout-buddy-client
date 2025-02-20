@@ -1,5 +1,7 @@
 import "./FirstHomeStyle.css"
 
+import FirstHomeImg from "../../Assets/firstHomeImg.jpg"
+
 import { Link } from "react-router-dom"
 
 
@@ -10,9 +12,17 @@ const FirstHome = () => {
                 <h1>Let's Do It</h1>
                 <p>The body achieves what the mind believes, believe your self and achieve your goals.</p>
                 <p>Push harder than yesterday if you want a different tomorrow.</p>
-                <Link to="/home">
-                    <button> Save your Exercise</button>
-                </Link>
+                <div className="firstHomeBtns">
+                    <Link to="/home">
+                        <button> Save your Exercise</button>
+                    </Link>
+                    <Link to="/collections">
+                        <button>Your Collections</button>
+                    </Link>
+                </div>
+            </div>
+            <div className="firstHomeImg">
+                <img src={FirstHomeImg} alt="" />
             </div>
 
         </div>

@@ -21,9 +21,19 @@ const Navbar = () => {
       </div>
 
       {user && (
-        <div className="logout">
-          <span>{user.email}</span>
-          <button onClick={handleClick}>Logout</button>
+        <div className="navContent">
+          <div className="navLinks">
+            <Link to="/">Home</Link>
+            <Link>About</Link>
+            <Link to="/home">Add Workouts</Link>
+            <Link to="/collections">Your Workouts</Link>
+            <Link to="/userinputs">Reset Suggestions</Link>
+            <Link to="">Contact</Link>
+          </div>
+          <div className="logout">
+            {/* <span>{user.email}</span> */}
+            <button onClick={handleClick}>Logout</button>
+          </div>
         </div>
       )}
 

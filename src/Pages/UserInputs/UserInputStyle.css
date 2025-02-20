@@ -4,7 +4,14 @@
     display: flex;
     justify-content: center;
     padding: 30px;
-    /* background-color: rgb(28, 28, 55); */
+    background-image: url("../../Assets/userInputBG.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: blur(5px);
+
+
+
+
 }
 
 .userFillForm {
@@ -15,20 +22,21 @@
     flex-direction: column;
     padding: 10px;
     gap: 40px;
-    background-color: rgba(255, 255, 255, 0.37);
     border-radius: 5px;
-    box-shadow: rgb(50, 50, 93, 0.25) 0px 2px 5px 1px,
-    rgb(0, 0, 0, 0.3) 0px 1px 3px 1px;
-    backdrop-filter: blur(3px);
-}
 
+    background: rgba(227, 240, 247, 0.36);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.8px);
+    -webkit-backdrop-filter: blur(4.8px);
+}
 
 
 .userFillForm .formTitle {
     text-align: center;
 }
 
- .userForm {
+.userForm {
     width: 80%;
     display: flex;
     justify-content: space-evenly;
@@ -49,30 +57,31 @@
     /* border: 1px solid black; */
 }
 
-.field .fieldName{
+.field .fieldName {
     width: 40%;
     font-size: 18px;
     font-weight: 500;
 }
-.field .fieldName span{
+
+.field .fieldName span {
     font-size: 11px;
     font-weight: 300;
 }
 
-.field input{
+.field input {
     width: 55%;
     outline: none;
-    border: 1px solid rgba(180,145,80,255);
+    border: 1px solid blue;
     padding: 4px;
     border-radius: 4px;
-    background-color: rgb(211, 206, 206);
+    background-color: rgb(230, 234, 236);
 }
 
-.field input:focus{
+.field input:focus {
     background-color: white;
 }
 
-.radioFields{
+.radioFields {
     width: 90%;
     display: flex;
     justify-content: space-between;
@@ -80,12 +89,13 @@
     gap: 10px;
     flex-direction: column;
 }
-.radioFields .fieldName{
+
+.radioFields .fieldName {
     font-size: 18px;
     font-weight: 500;
 }
 
-.radioFields .radioBtn{
+.radioFields .radioBtn {
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -94,32 +104,35 @@
     padding-left: 30px;
 }
 
-.radioBtn label{
+.radioBtn label {
     display: flex;
-    font-size: 12px;
+    font-size: 15px;
     gap: 2px;
 }
 
 
-.submitBtn{
+.submitBtn {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.submitBtn button{
+
+.submitBtn button {
     width: 60%;
     border: none;
     outline: none;
     padding: 10px 30px;
     font-size: 15px;
-    background-color: #e7195a;
+    /* background-color: #e7195a; */
+    background-color: deeppink;
     /* background-color: rgb(23, 132, 13); */
     color: white;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.2s;
 }
-.submitBtn button:hover{
+
+.submitBtn button:hover {
     transform: scale(1.05);
 }

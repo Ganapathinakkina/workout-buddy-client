@@ -1,59 +1,96 @@
 
-.records{
-    width: 45%;
-    height: 80vh;
-    padding: 20px;
+.recordsPage{
+    width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+.recordsPage h1{
+    font-size: 28px;
+    color: rgb(0, 49, 185);
+  text-shadow: 3px 3px 6px #ffffff;
+    
+}
+
+.recordsPage .records{
+    width: 98%;
+    height: 70vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
     gap: 20px;
     /* border: 1px solid black; */
     overflow-y: auto;
-    scrollbar-width: none; /* For Firefox */
+    scrollbar-width: none; 
     -ms-overflow-style: none;
+    flex-wrap: wrap;
 }
-.records::-webkit-scrollbar {
+.recordsPage .records::-webkit-scrollbar {
     display: none;
 }
 
-.record{
-    width: 95%;
-    height: auto;
+.recordsPage .records .record{
+    width: 370px;
     padding: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.598);
     gap: 10px;
+    background-color: rgba(255, 255, 255, 0.532);
     border-radius: 5px;
-    box-shadow: rgb(50, 50, 93, 0.25) 0px 2px 5px 1px,
-    rgb(0, 0, 0, 0.3) 0px 1px 3px 1px;
-    position: relative;
+    box-shadow: rgba(48, 48, 236, 0.25) 0px 0px 5px 1px,
+    rgb(0, 0, 0, 0.3) 3px 3px 3px 0px;
     backdrop-filter: blur(3px);
-    transition: 0.3s;
-}
-.record:hover{
-    transform: scale(1.02);
+    transition:all ease-in-out 0.3s;
 }
 
-.record h3{
-    color: rgb(24, 98, 1);
+.recordsPage .records .record h3{
+    font-size: 18px;
+    color: white;
+    text-shadow: 0px 0px 2px rgb(0, 37, 130), 0 0 2px blue, 0 0 2px darkblue;
+    word-wrap: break-word;
+}
+.recordsPage .records .record:hover{
+    transform: scale(1.03);
+    background-color: rgba(255, 255, 255, 0.642);
+    box-shadow: rgba(48, 48, 236, 0.25) 4px 3px 4px 3px,
+    rgb(0, 0, 0, 0.3) 3px 3px 3px 0px;
 }
 
-.record .btns{
+.record .recordContent {
+    width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.record .recordContent .content p{
+    font-size: 16px;
+    color: #002d71;
+}
+.record .recordContent .content p span{
+    font-size: 10px;
+}
+
+.record .recordContent .content .btns{
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px;
-    position: absolute;
+    margin-top: 20px;
+    /* position: absolute;
     top: 15px;
-    right: 15px;
+    right: 15px; */
 }
 
-.record .btns .edit-btn{
-    padding: 5px 8px;
+.record .recordContent .content .btns .edit-btn{
+    padding: 3px 5px;
     background-color: rgb(255, 154, 3);
     border: none;
     outline: none;
@@ -64,15 +101,16 @@
     display: flex;
     gap: 5px;
 }
-.record .btns .edit-btn p{
+.record .recordContent .content .btns .edit-btn p{
     font-size: 13px;
+    color: white;
 }
-.record .btns .edit-btn:hover{
+.record .recordContent .content .btns .edit-btn:hover{
     transform: scale(1.07);
 }
 
-.record .btns .delete-btn{
-    padding: 5px 8px;
+.record .recordContent .content .btns .delete-btn{
+    padding: 3px 5px;
     background-color: #e7195a;
     border: none;
     outline: none;
@@ -83,12 +121,43 @@
     display: flex;
     gap: 4px;
 }
-.record .btns .delete-btn p{
+.record .recordContent .content .btns .delete-btn p{
     font-size: 13px;
+    color: white;
 }
 
-.record .btns .delete-btn:hover{
+.record .recordContent .content .btns .delete-btn:hover{
     transform: scale(1.05);
+}
+
+.record .recordImg{
+    width: 90px;
+}
+.record .recordImg img{
+    width: 100%;
+    border: 3px double rgb(2, 2, 138);
+}
+
+.recordsPage .collectionBtn{
+     width: 50%;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     /* border: 1px solid black; */
+}
+.recordsPage .collectionBtn button{
+    padding: 10px 20px;
+    font-size: 14px;
+    /* background-image: linear-gradient(to right,#03215a, #00aaff, #03215a); */
+    background-color: deeppink;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    transition: all ease-in-out 0.3s;
+}
+.recordsPage .collectionBtn button:hover{
+    transform: scale(1.08);
 }
 
 @media(max-width:1100px){
@@ -129,9 +198,9 @@
         justify-content: center;
         align-items: center;
         gap: 5px;
-        position: absolute;
+        /* position: absolute;
         top: 10px;
-        right: 10px;
+        right: 10px; */
     }
 
     .record .btns .delete-btn{

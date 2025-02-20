@@ -4,15 +4,15 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
-    padding: 0 150px;
-    /* background-color: rgba(48, 48, 48, 0.906); */
-    background-color: black;
+    /* background-color: 	#0c2658;  */
+    background-color: #0c2d6af4;
+    padding: 0 20px;
 }
 
 nav .logo {
+    width: 20%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 5px;
 }
@@ -34,6 +34,29 @@ nav .logo a {
     display: inline-block;
 }
 
+nav .navContent{
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navContent .navLinks{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navLinks a{
+    color: white;
+    font-size: 14px;
+    transition: all ease-in-out 0.3s;
+}
+.navLinks a:hover{
+    transform: scale(1.2);
+    /* font-size: 15px; */
+}
+
+
 nav .logout {
     display: flex;
     justify-content: center;
@@ -48,18 +71,22 @@ nav .logout span {
 nav .logout button {
     font-size: 16px;
     font-weight: 400;
-    padding: 8px 30px;
+    padding: 5px 20px;
     border-radius: 5px;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, rgba(154, 108, 50, 255), rgba(232, 217, 140, 255),
-            rgba(149, 101, 44, 255));
-    transition: 0.2s;
+    /* border: 0.05px solid black; */
+    /* color: #03215a;
+    background-image: radial-gradient(#d1f5f9, #74c5ea, #0a54c2); */
+    background-color: deeppink;
+    color: white;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
 nav .logout button:hover {
-    transform: scale(1.05)
+    transform: scale(1.1);
+    /* box-shadow: 0px 0px 5px 0.5px #95d5f2; */
 }
 
 nav .auth {
@@ -71,17 +98,28 @@ nav .auth {
 
 nav .auth button {
     width: 100px;
-    /* height: 40px; */
     padding: 5px 10px;
     border-radius: 10px;
     outline: none;
     border: none;
+    /* border: 0.01px solid white; */
+    /* color: #03215a;
+    background-image: radial-gradient(#d1f5f9, #74c5ea, #0a54c2); */
+    background-color: deeppink;
+    /* color: white; */
+    transition: 0.2s;
+    cursor: pointer;
+    /* border: none;
     background-image: linear-gradient(to right, rgba(154, 108, 50, 255), rgba(232, 217, 140, 255),
-            rgba(149, 101, 44, 255));
+            rgba(149, 101, 44, 255)); */
+}
+nav .auth button:hover{
+    transform: scale(1.07);
+    /* box-shadow: 0px 0px 5px 1px #95d5f2; */
 }
 
 nav .auth button a {
-    color: black;
+    color: white;
     font-size: 16px;
     font-weight: 400;
 }
@@ -129,13 +167,16 @@ nav .auth button a {
     nav .auth {
         gap: 10px;
     }
+
     nav .auth button {
         width: 60px;
         padding: 2px;
     }
+
     nav .auth button a {
         font-size: 12px;
     }
+
     nav .logout button {
         font-size: 12px;
         font-weight: 400;
@@ -143,10 +184,11 @@ nav .auth button a {
     }
 }
 
-@media(max-width:360px){
+@media(max-width:360px) {
     nav {
         padding: 0 12px;
     }
+
     nav .logo a {
         font-size: 16px;
     }

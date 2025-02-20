@@ -5,6 +5,7 @@ import { useAuthContext } from "../../Hooks/useAuthContext"
 
 import "./FormStyle.css"
 import { useLogout } from "../../Hooks/useLogout"
+import { Link } from "react-router-dom"
 
 const Form = () => {
 
@@ -23,6 +24,8 @@ const Form = () => {
     });
   }
 
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
   const createWorkout = async (e) => {
     e.preventDefault();
     try {
@@ -37,6 +40,13 @@ const Form = () => {
         reps: "",
         load: "",
       });
+
+      setIsSubmitted(true); // Show the message
+
+      setTimeout(() => {
+        setIsSubmitted(false); // Hide message after 3 seconds
+      }, 2500);
+
       getWorkouts()
     } catch (error) {
       if (error.response?.status === 401) {
@@ -88,23 +98,6 @@ const Form = () => {
     }
   }
 
-  // // IMAGE UPLOAD BLOB
-  // const [base64Image, setBase64Image] = useState(null);
-
-  // const handleFileUpload = (event) => {
-  //   const file = event.target.files[0];
-  //   if (file) {
-  //     const reader = new FileReader();
-
-  //     reader.onload = () => {
-  //       const base64String = reader.result.split(",")[1];
-  //       setBase64Image(`data:${file.type};base64,${base64String}`);
-  //       console.log(base64String);
-  //     };
-
-  //     reader.readAsDataURL(file);
-  //   }
-  // };
 
 
 
@@ -116,7 +109,7 @@ const Form = () => {
           <form onSubmit={createWorkout}>
 
             <div className="field">
-              <label htmlFor="">Title: </label>
+              <label htmlFor="">Workout Name: </label>
               <input type="text" name='title' value={form.title} onChange={updateFormField} />
             </div>
 
@@ -143,12 +136,21 @@ const Form = () => {
               )}
             </div> */}
 
-            <button>Submit</button>
+            <div className="formSubmitBG">
+              <Link to="/Collections">
+                <button>Collections</button>
+              </Link>
+
+              <button>Submit</button>
+            </div>
 
           </form>
 
         </div>
+
       )}
+
+
 
 
       {updateForm._id && (
@@ -157,7 +159,7 @@ const Form = () => {
           <form>
 
             <div className="field">
-              <label htmlFor="">Title: </label>
+              <label htmlFor="">Workout Name: </label>
               <input type="text" name='title' value={updateForm.title} onChange={handleUpdateFieldChange} />
             </div>
 
@@ -171,10 +173,17 @@ const Form = () => {
               <input type="tel" name='load' value={updateForm.load} onChange={handleUpdateFieldChange} />
             </div>
 
-            <button onClick={updateWorkout}>Update</button>
+            <button className="updateBtn" onClick={updateWorkout}>Update</button>
 
           </form>
 
+        </div>
+      )}
+
+
+      {isSubmitted && (
+        <div className={`submitMsg ${isSubmitted ? "" : "notSubmitted"}`} >
+          <p>Workout Added to your Collections</p>
         </div>
       )}
     </>

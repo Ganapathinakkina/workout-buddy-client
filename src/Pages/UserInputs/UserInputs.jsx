@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import "./UserInputStyle.css"
 import axios from "axios"
 import { useAuthContext } from "../../Hooks/useAuthContext"
@@ -42,6 +42,7 @@ const UserInputs = () => {
                     "Authorization": `Bearer ${user.token}`
                 }
             })
+            localStorage.setItem("suggestions", JSON.stringify(response.data))
             await setWorkoutSuggestions(response.data);
             console.log(workoutSuggestions);
             navigation("/suggestions");
@@ -53,6 +54,7 @@ const UserInputs = () => {
             }
         }
 
+ 
 
 
 

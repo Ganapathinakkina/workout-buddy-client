@@ -11,6 +11,7 @@ import FirstHome from './Pages/FirstHome/FirstHome';
 import Footer from './Components/Footer/Footer';
 import UserInputs from './Pages/UserInputs/UserInputs';
 import Suggestions from './Pages/WorkoutSuggestions/Suggestions';
+import Collections from './Pages/Collections/Collections';
 
 
 function App() {
@@ -30,7 +31,8 @@ function App() {
           <Route path="/login" element={!user ? <Login/> : <Navigate to= "/firsthome"/>}/>
           <Route path='/home' element={user ? <Home/> : <Navigate to= "/"/>}/>
           <Route path="/userinputs" element={ user ? <UserInputs/> : <Navigate to= "/login"/> }/>
-          <Route path="/suggestions" element={<Suggestions/>}/>
+          <Route path="/suggestions" element={user ? <Suggestions/> : <Navigate to= "/login"/>}/>
+          <Route path="/collections" element={user ? <Collections/> : <Navigate to= "/login"/>}/>
 
         </Routes> 
         {/* <Footer/> */}

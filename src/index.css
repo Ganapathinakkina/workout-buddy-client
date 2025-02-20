@@ -13,9 +13,13 @@
 }
 
 body{
-  background-color: #e2e1e1;
+  /* background-color: #e2e1e1; */
+  /* background-image: linear-gradient(to right, #5277ad, #658dcf, #b2cbf4); */
   font-family: "Poppins";
-  
+  background-image: url("../../client/src/Assets/lightBlueBG.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-image: linear-gradient(to right, #5e779e, #8598b6, #bccce6); */
 }
 
 a{

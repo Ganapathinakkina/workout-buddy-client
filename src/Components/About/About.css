@@ -1,0 +1,205 @@
+.aboutPage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3%;
+    border-top: 1px solid #030066;
+    gap: 50px;
+}
+
+.aboutPage h1 {
+    font-size: 42px;
+    /* color: rgb(224, 155, 25); */
+    color: rgb(9, 26, 46);
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.aboutPage .aboutContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.aboutContent .content {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.content h3 {
+    font-size: 19px;
+    font-style: oblique;
+    /* color: rgb(3, 3, 145); */
+    color: rgb(255, 208, 0);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.content p {
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
+    text-align: justify;
+    color: #030066;
+
+}
+
+
+.aboutContent .aboutImg {
+    width: 50%;
+}
+
+.aboutImg img {
+    width: 100%;
+    border-radius: 10px;
+    border: 4px double rgb(0, 0, 66);
+}
+
+/* .slick-slide>div {
+    margin: 0 10px;
+}
+
+.slick-list {
+    margin: 0 -10px;
+} */
+
+
+.aboutPage .missionContent {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.missionContent h3 {
+    font-size: 19px;
+    font-style: oblique;
+    color: rgb(255, 208, 0);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.missionContent p {
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
+    text-align: justify;
+    color: #012969;
+}
+
+
+.aboutPage .serviceContent {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.serviceContent .content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.serviceContent .content h3 {
+    font-size: 19px;
+    font-style: oblique;
+    color: rgb(255, 208, 0);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.serviceContent .content h4{
+    font-size: 19px;
+    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
+    text-align: justify;
+    color: #0c04ea;
+}
+
+.serviceContent .content p {
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
+    text-align: justify;
+    color: #012969;
+}
+.serviceContent .content p span{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.serviceContent .serviceCards {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-top: 20px; */
+}
+
+.serviceCards .card {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+    transition: all ease-in-out 0.5s;
+
+    background-color: rgba(255, 255, 255, 0.395);
+    border-radius: 5px;
+    box-shadow: rgba(1, 1, 91, 0.25) 3px 3px 5px 5px,
+        rgb(0, 0, 0, 0.3) 3px 3px 3px 0px;
+    backdrop-filter: blur(3px);
+}
+
+.card img {
+    width: 290px;
+    height: 250px;
+    border-radius: 10px;
+    border: 4px double rgb(12, 2, 128);
+}
+
+.card .cardContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardContent h4 {
+    font-size: 17px;
+    color: #140ec4;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.cardContent p {
+    font-size: 14px;
+    color: #030066;
+
+}
+
+.serviceCards .card:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.477);
+    box-shadow: rgba(29, 29, 249, 0.25) 4px 3px 4px 3px,
+        rgb(0, 0, 0, 0.3) 3px 3px 3px 0px;
+}

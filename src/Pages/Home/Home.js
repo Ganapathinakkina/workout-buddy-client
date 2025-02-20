@@ -1,5 +1,5 @@
 import React from 'react'
-import Records from '../../Components/Records/Records'
+// import Records from '../../Components/Records/Records'
 import Form from '../../Components/Form/Form'
 import "./HomeStyle.css"
 
@@ -9,7 +9,7 @@ const Home = () => {
     <section className='home'>
       
       <Form />
-      <Records />
+      
 
     </section >
   )

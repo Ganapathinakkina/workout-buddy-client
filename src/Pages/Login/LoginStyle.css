@@ -1,62 +1,75 @@
-.main-form{
+.main-form {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 90vh;
     flex-direction: column;
-    background-image: url("../../Assets/gymSignup.jpg");
+    /* background-image: url("../../Assets/loginBg.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+
 }
 
-.main-form form{
-    width: 30%;
+.main-form form {
+    width: 35%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.644);
+    /* background-color: rgba(255, 255, 255, 0.644); */
+    background-color: transparent;
     padding: 40px;
     gap: 25px;
-    border-radius: 5px;
-    box-shadow: rgb(50, 50, 93, 0.25) 0px 2px 5px 1px,
-    rgb(0, 0, 0, 0.3) 0px 1px 3px 1px;
-    backdrop-filter: blur(3px);
+    /* border-radius: 5px; */
+
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.304);
+    border-radius: 16px;
+    box-shadow: 10px 10px 20px  rgba(1, 80, 126, 0.542);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    border: 0.5px solid rgba(255, 255, 255, 0.32);
 }
-.main-form form h1{
+
+.main-form form h1 {
     font-size: 35px;
     font-weight: 500;
     color: #e7195a;
+    /* color: rgb(4, 66, 132); */
 }
 
-.main-form form .field{
+.main-form form .field {
     width: 100%;
-    border-bottom: 2px solid rgb(158, 157, 157); 
+    border-bottom: 2px solid rgba(36, 82, 119, 0.371);
     -webkit-transition: 0.2s;
     transition: 0.2s;
 }
 
-.main-form form label{
+.main-form form label {
     display: block;
     font-size: 17px;
 }
 
-.main-form form input{
+.main-form form input {
     display: block;
     outline: none;
-    border: none ;
+    border: none;
     width: 100%;
-    padding: 5px;
+    padding: 8px;
     background: transparent;
 
 }
-.main-form form input:focus{
-    box-shadow:  0px 2px 0px 0px rgba(154,108,50,255);
+
+.main-form form input:focus {
+    box-shadow: 0px 2px 0px 0px rgb(8, 73, 126);
     -webkit-transition: 0.4s;
     transition: 0.4s;
+    background: transparent;
+    border-radius: 0;
 }
 
-.main-form form button{
+.main-form form button {
     border: none;
     outline: none;
     padding: 10px 30px;
@@ -69,25 +82,27 @@
     transition: 0.2s;
 }
 
-.main-form form button:hover{
+.main-form form button:hover {
     transform: scale(1.05);
 }
 
 
-@media(max-width:950px){
-    .main-form form{
+@media(max-width:950px) {
+    .main-form form {
         width: 40%;
         padding: 30px;
     }
 }
-@media(max-width:650px){
-    .main-form form{
+
+@media(max-width:650px) {
+    .main-form form {
         width: 50%;
         padding: 20px;
     }
 }
-@media(max-width:460px){
-    .main-form form{
+
+@media(max-width:460px) {
+    .main-form form {
         width: 70%;
     }
 }

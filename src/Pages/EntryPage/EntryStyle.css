@@ -3,12 +3,11 @@
     width: 100%;
     height: 90vh;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    background-image:url("../../Assets/entryPageBG.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-left: 3%;
+    padding: 3%;
+    /* background-color: #e4eff4; */
+    
 }
 
 
@@ -31,12 +30,13 @@
 
 .entryContent .entryContentTitle h1{
     font-size: 42px;
-    color: rgb(224, 155, 25);
+    /* color: rgb(224, 155, 25); */
+    color: rgb(9, 26, 46);
     font-family:'Times New Roman', Times, serif;
 }
 .entryContent .entryContentTitle p{
     font-size: 18px;
-    color: rgb(171, 170, 170);
+    color: rgb(19, 73, 134);
 }
 
 .entryContent .content{
@@ -47,11 +47,21 @@
 }
 
 .entryContent .content p{
-    font-size: 20px;
+    font-size: 22px;
     color: white;
     font-weight: 400;
     font-style: italic;
+    letter-spacing: 0.5px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.entryImg{
+    width: 50%;
+}
+.entryImg img{
+    width: 100%;
+    border: 5px double #022c87;
+    box-shadow: 0px 0px 5px 4px #2466f5;
 }
 
 .entry a{
@@ -63,10 +73,14 @@
     border-radius: 5px;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, rgba(154,108,50,255), rgba(232,217,140,255), 
-    rgba(149,101,44,255));
+    /* background-image: linear-gradient(to right, rgba(154,108,50,255), rgba(232,217,140,255), rgba(149,101,44,255)); */
+    color: white;
+    background-color: deeppink;
+    /* background-image: linear-gradient(to right,#26affa, #ceefff, #26affa); */
+    /* background-image: linear-gradient(to right,#03215a, #00aaff, #03215a); */
     transition: 0.3s;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .entry button:hover{
@@ -75,18 +89,20 @@
 
 @media(max-width:950px){
     .entryContent{
-        width: 65%;
+        width: 45%;
         padding: 10px;
     }
+
 }
 
 @media(max-width:700px){
     .entry{
         justify-content: center;
-        padding: 2%;
+        padding: 1%;
+        gap: 20px;
     }
     .entryContent{
-        width: 90%;
+        /* width: 90%; */
         padding: 5px;
     }
     .entryContent .content{
