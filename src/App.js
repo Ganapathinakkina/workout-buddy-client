@@ -12,6 +12,8 @@ import Footer from './Components/Footer/Footer';
 import UserInputs from './Pages/UserInputs/UserInputs';
 import Suggestions from './Pages/WorkoutSuggestions/Suggestions';
 import Collections from './Pages/Collections/Collections';
+import About from './Components/About/About';
+import Contact from './Components/Contact/Contact';
 
 
 function App() {
@@ -33,9 +35,11 @@ function App() {
           <Route path="/userinputs" element={ user ? <UserInputs/> : <Navigate to= "/login"/> }/>
           <Route path="/suggestions" element={user ? <Suggestions/> : <Navigate to= "/login"/>}/>
           <Route path="/collections" element={user ? <Collections/> : <Navigate to= "/login"/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/contact' element={<Contact/>}/>
 
         </Routes> 
-        {/* <Footer/> */}
+        <Footer/>
       </Router>
 
       

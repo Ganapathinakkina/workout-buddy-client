@@ -4,6 +4,9 @@ import { useLogout } from "../../Hooks/useLogout"
 import { useAuthContext } from "../../Hooks/useAuthContext"
 
 import GymLogo from "../../Assets/workout-buddy-logo.png"
+import { FaBars } from "react-icons/fa6";
+import { FaTimes } from "react-icons/fa";
+import { useState } from "react"
 
 
 const Navbar = () => {
@@ -13,6 +16,13 @@ const Navbar = () => {
   const handleClick = () => {
     logout()
   }
+
+  const [menuClick, setMenuClick] = useState(false);
+
+  const menuHandleClick = () => {
+    setMenuClick(!menuClick)
+  }
+
   return (
     <nav>
       <div className="logo">
@@ -21,20 +31,29 @@ const Navbar = () => {
       </div>
 
       {user && (
-        <div className="navContent">
-          <div className="navLinks">
+
+        <>
+          <div className={menuClick ? "navLinks active" : "navLinks"}>
             <Link to="/">Home</Link>
-            <Link>About</Link>
+            <Link to="/about">About</Link>
             <Link to="/home">Add Workouts</Link>
             <Link to="/collections">Your Workouts</Link>
             <Link to="/userinputs">Reset Suggestions</Link>
-            <Link to="">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </div>
           <div className="logout">
             {/* <span>{user.email}</span> */}
             <button onClick={handleClick}>Logout</button>
           </div>
-        </div>
+          <div className="hamburger" onClick={menuHandleClick}>
+            {
+              menuClick ? (<FaTimes  style={{ color: "white" }} size={22} />) :
+                (<FaBars style={{ color: "white" }} size={22} />)
+            }
+
+          </div>
+        </>
+
       )}
 
 

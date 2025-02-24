@@ -7,6 +7,7 @@ import FirstHome from "../FirstHome/FirstHome"
 import Signup from "../Signup/Signup"
 import { useAuthContext } from "../../Hooks/useAuthContext"
 import About from "../../Components/About/About"
+import Contact from "../../Components/Contact/Contact"
 
 
 const Entry = () => {
@@ -34,7 +35,8 @@ const Entry = () => {
             </div>
 
         </div>
-        <About/>
+        {/* <About/>
+        <Contact/> */}
 </>
     )
 }

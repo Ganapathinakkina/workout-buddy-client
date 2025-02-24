@@ -1,0 +1,469 @@
+.contactPage{
+    /* position: relative;
+    top: 10vh; */
+    /* height: 80vh; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px 50px;
+    /* background-image: url("../../Assets/lightBlueBG.png");
+    background-size: cover;
+    background-repeat: no-repeat; */
+    /* border-top: 1px solid black; */
+}
+.contactPage h1{
+    font-size: 28px;
+
+}
+.contactPage .content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+}
+/* .contact_me h1{
+    font-size: 4rem;
+    position: relative;
+}
+
+.contact_me h1::after{
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    width: 100%;
+    height: 2.5px;
+    background-color: var(--text-decoration-color);
+}
+
+.contact_me p{
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+    opacity: 0.8;
+    text-align: justify;
+    align-content: center;
+    width: 85%;
+} */
+
+.contactPage .formContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* height: 200%; */
+    border-radius: 10px;
+    padding: 10px;
+    gap: 20px;
+    background-color:#3ca5f8;
+    /* border: 1px solid black; */
+}
+
+/* ------------------------- Contact info aside styling part ------------------------- */
+
+.formContent .contact_info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 150px;
+    width: 40%;
+    height: 100%;
+    /* background: url("../../Assets/lightBlueBG.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat; */
+    background-color: rgb(1, 1, 106);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.contact_info *{
+    color: white !important;
+}
+
+.contact_info .info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+
+.info h2{
+    font-size: 24px;
+    font-family: var(--outfit-font);
+}
+
+
+.contact_info .details{
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    height: auto;
+}
+
+.details .icons, .details .icons_info{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+}
+.icons{
+    gap: 20px !important;
+}
+.icons_info h2{
+    font-size: 18px;
+}
+
+
+/* ------------------------- Form styling part ------------------------- */
+
+.formContent form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 20px;
+    width: 55%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    /* border: 1px solid black; */
+}
+
+form .form_details{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    /* border: 1px solid black; */
+}
+
+.form_details label{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+.form_details label span{
+    font-size: 22px;
+    font-family: var(--salsa-font);
+    color: rgb(0, 3, 69);
+    opacity: 0.8;
+    text-align: left;
+    align-content: center;
+    width: 100%;
+}
+
+.form_details input, .message textarea{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color:rgba(243, 248, 248, 0.5);
+    box-shadow: 4px 4px 6px rgba(var(--contact-input-shadow-color), 0.2);
+    transition: all 0.3s ease;
+    font-family: var(--outfit-font);
+
+}
+
+.form_details input:hover, .form_details input:focus,
+.message textarea:hover, .message textarea:focus{
+    box-shadow: 8px 8px 6px rgba(40, 29, 89, 0.4);
+    transform: scale(1.02);
+    background-color: rgba(240, 248, 255, 0.852);
+}
+
+.message textarea{
+    height: 80px;
+    resize: none;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    font-family: var(--outfit-font);
+}
+
+
+form .subject{
+    width: 100%;
+    /* height: auto; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:space-between ;
+    gap: 10px;
+    /* border: 1px solid black; */
+}
+
+.subject label, .message label{
+    gap: 5px;
+    width: 100%;
+    font-family: var(--salsa-font);
+    font-size: 20px;
+    opacity: 0.8;
+    color: rgb(0, 3, 69);
+}
+
+.subject .options{
+    display: flex;
+    gap:5px;
+    width: 100%;
+    height: auto;
+}
+
+.options label{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    font-family: var(--salsa-font);
+    color:rgb(0, 0, 92);
+    opacity: 0.8;
+    flex-wrap: nowrap;
+    height: 20px;
+}
+
+form .submit{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: auto;
+}
+form button{
+    padding: 8px 30px;
+    border-radius: 5px;
+    background-color:deeppink;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-family: var(--salsa-font);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover{
+    /* background-color: #504ac1; */
+    transform: scale(1.1);
+}
+
+form .status{
+    text-align: center;
+    margin-top: 0;
+    /* font-size: 14px; */
+}
+
+p.error{
+    color: red;
+    font-size: 1.2rem;
+}
+
+
+/* ------------ 1200 screen styling part ------------ */
+
+@media screen and (max-width: 1200px) 
+{
+    .contact_me h1{
+        font-size: 3.5rem;
+    }
+
+    .contact_me .contact_form{
+        width: 95%;
+        height: 500px;
+        padding: 10px;
+    }
+
+    .contact_me p{
+        width: 95%;
+    }
+
+    .details .icons, .details .icons_info{
+        gap: 10px;
+    }
+    .icons{
+        gap: 15px !important;
+    }
+    .icons_info{
+        gap: 18px !important;
+    }
+    .icons_info h2{
+        font-size: 1.2rem;
+    }
+}
+
+/* ------------ 985 screen styling part ------------ */
+
+@media screen and (max-width: 985px) 
+{
+    .contact_me{
+        gap: 25px;
+        padding: 30px 50px;
+    }
+
+    .contact_me h1{
+        font-size: 3.5rem;
+    }
+
+    .contact_me .contact_form{
+        width: 100%;
+        height: 500px;
+        padding: 10px;
+    }
+
+    .contact_me p{
+        width: 100%;
+    }
+
+    .info{
+
+    }
+
+    .icons{
+        gap: 15px !important;
+    }
+
+    .icons_info h2{
+        font-size: 1.2rem;
+    }
+}
+
+
+/* ------------ 768 screen styling part ------------ */
+
+@media screen and (max-width: 768px) 
+{
+    .contact_me{
+        gap: 25px;
+        padding: 30px 30px;
+    }
+
+    .contact_info{
+        padding: 10px 15px !important;
+    }
+
+    .info h2{
+        font-size: 2rem;
+    }    
+
+    .info p{
+        font-size: 1.4rem;
+    }
+
+
+
+}
+
+/* ------------ 678 screen styling part ------------ */
+
+@media screen and (max-width: 678px) 
+{
+    .contact_me h1{
+        font-size: 3.2rem;
+    }
+
+    .contact_me .contact_form{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 750px !important;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: rgb(var(--contact-form-bg-color), 0.5);
+    }
+
+    .contact_form .contact_info{
+        width: 100%;
+        height: auto;
+        padding: 50px !important;
+    }
+
+    .contact_form form{
+        width: 100%;
+        height: 65%;
+        padding: 10px !important;
+        justify-content: space-between;
+    }
+
+
+    form .form_details{
+        gap: 20px !important;
+        width: 100%;
+        height: 80px !important;
+        padding: 0;
+        align-items: normal !important;
+    }
+    
+
+    .form_details label{
+        gap: 5px;
+        width: 100%;
+        height: 60px;
+        padding: 0 !important;
+    }
+    
+    .form_details label span{
+        font-size: 1.4rem;
+        width: 100%;
+        padding: 0 !important;
+    }
+
+    .form_details label input{
+        font-size: 1.4rem;
+        width: 100%;
+        padding: 10px !important;
+        height: 100% !important;
+    }
+    
+    .message textarea{
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+    }
+    
+    .message textarea{
+        height: 80px;
+        width: 100%;
+    }
+    
+    
+    form .subject{
+        width: 100%;
+        gap: 10px;
+        height: 70px;
+        justify-content: normal !important;
+    }
+    
+    .subject label, .message label{
+        gap: 5px;
+        width: 100%;
+        font-size: 1.4rem;
+    }
+    
+    .subject .options{
+        gap:5px;
+        width: 100%;
+    }
+    
+    .options label{
+        gap: 5px;
+        font-size: 1rem;
+        height: 20px;
+    }
+}

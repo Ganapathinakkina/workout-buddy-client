@@ -1,17 +1,27 @@
 .footer {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 20px;
-    background-color: black;
-    padding: 50px;
+    flex-direction: column;
+    gap: 10px;
+    background-color:rgb(0, 10, 103);
+    padding: 10px;
 }
 
-.footerLogo {
+.footer .footerInfo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 20px; */
+    padding: 10px 30px;
+}
+
+.footerInfo .footerLogo {
     width: 30%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -40,11 +50,11 @@
 }
 
 
-.footerContent {
+.footerInfo .footerContent {
     width: 30%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
 }
 
 .footerContent .contentTitle {
@@ -86,32 +96,48 @@
 }
 
 
-.footerBtn {
-    width: 30%;
+/* .footerContent .rights{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.rights p{
+    font-size: 12px;
+    color: white;
+} */
 
-.footerBtn a {
-    width: 80%;
+
+.footerInfo .footerImg {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+.footerImg .footerIcons{
+width: 30px;
+height: 30px;
+background: transparent;
+color: white;
+transition: all ease-in-out 0.3s;
+}
+.footerImg .footerIcons:hover{
+transform: scale(1.1);
 }
 
-.footerBtn a button {
-    width: 100%;
-    height: 35px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    background-image: linear-gradient(to right, rgba(154, 108, 50, 255), rgba(232, 217, 140, 255),
-            rgba(149, 101, 44, 255));
-    transition: 0.3s;
-    cursor: pointer;
+
+
+.footer .footerRights{
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px 0px 5px;
+}
+.footerRights p{
+    font-size: 10px;
+    color: white;
 }
 
-.footerBtn a button:hover {
-transform: scale(1.05);
-}
 
 @media(max-width:800px) {
     .footer {

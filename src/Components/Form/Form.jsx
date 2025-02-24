@@ -41,10 +41,10 @@ const Form = () => {
         load: "",
       });
 
-      setIsSubmitted(true); // Show the message
+      setIsSubmitted(true); 
 
       setTimeout(() => {
-        setIsSubmitted(false); // Hide message after 3 seconds
+        setIsSubmitted(false); 
       }, 2500);
 
       getWorkouts()
@@ -58,6 +58,8 @@ const Form = () => {
   }
 
   //UPDATE FORM FUNCTION
+
+  const [isUpdated, setIsUpdated] = useState(false);
 
   const handleUpdateFieldChange = (e) => {
     const { name, value } = e.target;
@@ -78,6 +80,12 @@ const Form = () => {
           "Authorization": `Bearer ${user.token}`
         }
       });
+
+      setIsUpdated(true); 
+
+      setTimeout(() => {
+        setIsUpdated(false); 
+      }, 2500);
 
       getWorkouts();
 
@@ -186,6 +194,14 @@ const Form = () => {
           <p>Workout Added to your Collections</p>
         </div>
       )}
+
+      {
+        isUpdated && (
+          <div className={`updateMsg ${isUpdated ? "" : "notUpdated"}`}>
+            <p>Workout Updated Successfully</p>
+          </div>
+        )
+      }
     </>
 
   )
