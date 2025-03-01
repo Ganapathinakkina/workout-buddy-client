@@ -1,13 +1,13 @@
 .suggestion {
     width: 100%;
-    /* height: 90vh; */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     /* gap: 10px; */
     text-align: center;
-    padding: 10px;
+    padding: 60px 10px 10px;
 }
 
 .suggestion h1 {
@@ -26,21 +26,27 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
-    gap: 50px;
+    padding: 10px;
+    gap: 20px;
     /* border: 1px solid black; */
 }
 
 .selectionForm .workoutList {
     width: 100%;
-    /* height: 50vh; */
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
     padding: 10px;
     /* border: 1px solid black; */
+    overflow-y: auto;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
     flex-wrap: wrap;
+}
+.selectionForm .workoutList::-webkit-scrollbar{
+    display: none;
 }
 
 .workoutList .card {
@@ -51,7 +57,7 @@
     align-items: flex-start;
     padding: 10px;
     /* border: 0.5px solid #03265a; */
-    box-shadow: 10px 10px 20px  rgba(1, 39, 61, 0.352);
+    box-shadow: 10px 10px 20px  rgba(1, 39, 61, 0.505);
     /* background-color: rgba(239, 212, 212, 0.61); */
     background-color: #9ac4fb;
     transition: all 0.3s ease-in-out;
@@ -60,8 +66,7 @@
 .workoutList .card:hover{
     background-color: #97c4fe;
     box-shadow: 0 0 20px 2px rgb(1, 53, 107);
-    transform: scale(1.03);
-    /* border: 1px solid #1f4a8a; */
+    transform: scale(1.04);
 }
 
 .card .cardLabel {
@@ -108,7 +113,6 @@
     justify-content: space-between;
     align-items: flex-end;
     padding: 20px;
-    /* gap: 50px; */
 }
 .suggestionButtons button{
     padding: 6px 15px;
@@ -116,8 +120,6 @@
     border: none;
     outline: none;
     border-radius: 5px;
-    /* background-image: linear-gradient(to right,#03215a, #1874a2, #03215a); */
-    /* background-image: radial-gradient(#9abdfd, #095f8a, #03215a); */
     background-color: deeppink;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -125,4 +127,20 @@
 }
 .suggestionButtons button:hover{
     transform: scale(1.1);
+}
+
+@media(max-width:1200px){
+    .suggestion {
+        padding: 100px 10px 10px;
+    }
+}
+
+@media(max-width:400px){
+    .suggestion h1 {
+        font-size: 24px;
+    }
+    .selectionForm .suggestionButtons{
+        width: 100%;
+        padding: 10px;
+    }
 }

@@ -7,6 +7,7 @@ import GymLogo from "../../Assets/workout-buddy-logo.png"
 import { FaBars } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
 import { useState } from "react"
+import { useEffect } from "react";
 
 
 const Navbar = () => {
@@ -22,6 +23,20 @@ const Navbar = () => {
   const menuHandleClick = () => {
     setMenuClick(!menuClick)
   }
+
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log("Scrolling...");
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
 
   return (
     <nav>
@@ -40,6 +55,7 @@ const Navbar = () => {
             <Link to="/collections">Your Workouts</Link>
             <Link to="/userinputs">Reset Suggestions</Link>
             <Link to="/contact">Contact</Link>
+            <p id="logout-resp" onClick={handleClick}>Logout</p>
           </div>
           <div className="logout">
             {/* <span>{user.email}</span> */}

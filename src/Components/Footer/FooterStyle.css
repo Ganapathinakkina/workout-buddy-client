@@ -5,11 +5,11 @@
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    background-color:rgb(0, 10, 103);
+    background-color: rgb(0, 10, 103);
     padding: 10px;
 }
 
-.footer .footerInfo{
+.footer .footerInfo {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -91,6 +91,7 @@
     color: white;
     transition: 0.2s;
 }
+
 .footerContent .content .providings p:hover {
     transform: scale(1.05);
 }
@@ -114,70 +115,74 @@
     align-items: center;
     gap: 20px;
 }
-.footerImg .footerIcons{
-width: 30px;
-height: 30px;
-background: transparent;
-color: white;
-transition: all ease-in-out 0.3s;
+
+.footerImg .footerIcons {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    color: white;
+    transition: all ease-in-out 0.3s;
 }
-.footerImg .footerIcons:hover{
-transform: scale(1.1);
+
+.footerImg .footerIcons:hover {
+    transform: scale(1.1);
 }
 
 
 
-.footer .footerRights{
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 10px 0px 5px;
+.footer .footerRights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px 5px;
 }
-.footerRights p{
-    font-size: 10px;
+
+.footerRights p {
+    font-size: 8px;
     color: white;
 }
 
 
 @media(max-width:800px) {
-    .footer {
-        padding: 30px;
+    .footer .footerInfo {
+        padding: 10px;
     }
+
     .footerLogo .logo a {
-        font-size: 22px;
+        font-size: 20px;
     }
+
+    .footerContent .contentTitle h2 {
+        font-size: 20px;
+    }
+
     .footerContent .content .providings p {
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    .footerImg .footerIcons {
+        width: 20px;
+        height: 20px;
     }
 }
 
-@media(max-width:700px) {
-    .footer {
+@media(max-width:620px){
+    .footer .footerInfo {
         flex-direction: column;
-        gap: 50px;
+        padding: 10px 30px;
+        gap: 30px;
     }
-
-    .footerLogo {
+    .footerInfo .footerLogo {
         width: 100%;
+        justify-content: center;
     }
-    .footerLogo .logo a {
-        font-size: 24px;
-    }
-
-    .footerContent {
+    .footerInfo .footerContent {
         width: 100%;
+        justify-content: center;
+        align-items: center;
     }
-
-    .footerContent .content {
-        justify-content: space-evenly;
-        gap: 0px;
-    }
-
-    .footerBtn {
+    .footerInfo .footerImg {
         width: 100%;
-    }
-
-    .footerBtn a {
-        width: 60%;
+        justify-content: center;
     }
 }

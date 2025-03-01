@@ -1,29 +1,26 @@
 .userInputs {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 30px;
+    align-items: center;
+    padding: 60px 30px 30px;
     background-image: url("../../Assets/userInputBG.png");
     background-size: cover;
     background-repeat: no-repeat;
     background: blur(5px);
-
-
-
-
 }
 
 .userFillForm {
     width: 60%;
+    height: 95%;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 10px;
     gap: 40px;
     border-radius: 5px;
-
     background: rgba(227, 240, 247, 0.36);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -36,7 +33,12 @@
     text-align: center;
 }
 
-.userForm {
+.userFillForm .formTitle h1 {
+    font-size: 26px;
+    color: rgb(1, 1, 145);
+}
+
+.userFillForm .userForm {
     width: 80%;
     display: flex;
     justify-content: space-evenly;
@@ -116,6 +118,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 .submitBtn button {
@@ -135,4 +138,42 @@
 
 .submitBtn button:hover {
     transform: scale(1.05);
+}
+
+@media(max-width:950px) {
+    .userFillForm {
+        width: 90%;
+        height: 60%;
+    }
+}
+
+@media(max-width:600px) {
+    .userFillForm {
+        width: 100%;
+        height: 70%;
+    }
+    .userFillForm .userForm {
+        width: 100%;
+    }
+    .userForm .field {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .field .fieldName {
+        width: 100%;
+    }
+    .field input {
+        width: 85%;
+        border:none;
+        border-bottom: 1px solid blue;
+        background: transparent;
+    }
+    .field input:focus {
+        background-color: rgba(169, 216, 250, 0.438);
+    }
+    .radioFields .radioBtn {
+        padding-left: 0;
+    }
+
 }

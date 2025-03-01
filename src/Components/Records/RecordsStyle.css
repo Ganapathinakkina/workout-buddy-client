@@ -1,11 +1,12 @@
 
 .recordsPage{
     width: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 30px 20px 10px;
     gap: 20px;
 }
 .recordsPage h1{
@@ -16,8 +17,8 @@
 }
 
 .recordsPage .records{
-    width: 98%;
-    height: 70vh;
+    width: 100%;
+    height: 65vh;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -35,7 +36,7 @@
 }
 
 .recordsPage .records .record{
-    width: 370px;
+    width: 380px;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -53,7 +54,7 @@
 .recordsPage .records .record h3{
     font-size: 18px;
     color: white;
-    text-shadow: 0px 0px 2px rgb(0, 37, 130), 0 0 2px blue, 0 0 2px darkblue;
+    text-shadow: 0px 0px 3px rgb(0, 37, 130), 0 0 2px blue, 0 0 2px darkblue;
     word-wrap: break-word;
 }
 .recordsPage .records .record:hover{
@@ -64,10 +65,11 @@
 }
 
 .record .recordContent {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* border: 1px solid black; */
 }
 
 .record .recordContent .content p{
@@ -158,22 +160,18 @@
     transform: scale(1.08);
 }
 
-@media(max-width:1100px){
-    .records{
-        width: 50%;
-    }
-}
+
 
 @media(max-width:950px){
-    .records{
-        width: 55%;
+    .recordsPage .records{
+        width: 60%;
     }
-    .record{
+    .record .record{
         width: 100%;
     }
 }
 @media(max-width:750px){
-    .records{
+    .recordsPage .records{
         width: 100%;
         padding: 10px;
     }
@@ -187,7 +185,7 @@
 
 @media(max-width:380px){
 
-    .records{
+    .recordsPage .records{
         padding: 0px;
     }
 
@@ -196,9 +194,6 @@
         justify-content: center;
         align-items: center;
         gap: 5px;
-        /* position: absolute;
-        top: 10px;
-        right: 10px; */
     }
 
     .record .btns .delete-btn{

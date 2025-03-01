@@ -59,7 +59,6 @@ const Records = () => {
                   <img src={item.image_blob} alt="" />
                 </div>
               </div>
-
             </div>
           )
         })}

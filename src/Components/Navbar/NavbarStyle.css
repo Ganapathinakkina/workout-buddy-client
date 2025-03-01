@@ -17,7 +17,6 @@ nav .logo {
     justify-content: flex-start;
     align-items: center;
     gap: 5px;
-    border: 1px solid white;
 }
 
 nav .logo img {
@@ -42,7 +41,6 @@ nav .navLinks {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 1px solid white; */
 }
 
 .navLinks a {
@@ -53,7 +51,11 @@ nav .navLinks {
 
 .navLinks a:hover {
     transform: scale(1.2);
-    /* font-size: 15px; */
+    color: rgb(255, 213, 0);
+}
+
+.navLinks #logout-resp{
+    display: none;
 }
 
 
@@ -76,9 +78,6 @@ nav .logout button {
     border-radius: 5px;
     outline: none;
     border: none;
-    /* border: 0.05px solid black; */
-    /* color: #03215a;
-    background-image: radial-gradient(#d1f5f9, #74c5ea, #0a54c2); */
     background-color: deeppink;
     color: white;
     transition: all 0.3s ease-in-out;
@@ -87,14 +86,14 @@ nav .logout button {
 
 nav .logout button:hover {
     transform: scale(1.1);
-    /* box-shadow: 0px 0px 5px 0.5px #95d5f2; */
 }
 
 nav .auth {
+    width: 65%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 nav .auth button {
@@ -103,21 +102,13 @@ nav .auth button {
     border-radius: 10px;
     outline: none;
     border: none;
-    /* border: 0.01px solid white; */
-    /* color: #03215a;
-    background-image: radial-gradient(#d1f5f9, #74c5ea, #0a54c2); */
     background-color: deeppink;
-    /* color: white; */
     transition: 0.2s;
     cursor: pointer;
-    /* border: none;
-    background-image: linear-gradient(to right, rgba(154, 108, 50, 255), rgba(232, 217, 140, 255),
-            rgba(149, 101, 44, 255)); */
 }
 
 nav .auth button:hover {
     transform: scale(1.07);
-    /* box-shadow: 0px 0px 5px 1px #95d5f2; */
 }
 
 nav .auth button a {
@@ -144,6 +135,15 @@ nav .hamburger {
     nav .logout {
         display: none;
     }
+    .navLinks #logout-resp{
+        display: block;
+        font-size: 18px;
+        color: rgb(255, 183, 0);
+        transition: all ease-in-out 0.3s;
+    }
+    .navLinks #logout-resp:hover{
+        transform: scale(1.2);
+    }
 
     nav .hamburger {
         display: block;
@@ -152,7 +152,7 @@ nav .hamburger {
         width: 30%;
         position: absolute;
         z-index: -1;
-        height: 38vh;
+        height: 40vh;
         top: 3vh;
         right: -100%;
         flex-direction: column;
@@ -160,6 +160,7 @@ nav .hamburger {
         justify-content: center;
         align-items: center; 
         padding: 5px;
+        border-radius: 5px;
     }
 
     .active{
@@ -172,6 +173,12 @@ nav .hamburger {
     nav{
         padding: 0 10px ;
     }
+    nav .logo {
+        width: 55%;
+    }
+    nav .logo a{
+        font-size: 18px;
+    }
 
     nav .navLinks{
         width: 45%;
@@ -179,5 +186,19 @@ nav .hamburger {
     .active{
         left: 55%;
         background-color: rgba(0, 0, 66, 0.995);
+    }
+    nav .auth {
+        width: 45%;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        gap: 10px;
+    }
+    nav .auth button {
+        padding: 4px 6px;
+        border-radius: 6px;
+    }
+    nav .auth button a {
+        font-size: 12px;
     }
 }

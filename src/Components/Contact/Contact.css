@@ -3,12 +3,13 @@
     top: 10vh; */
     /* height: 80vh; */
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 30px;
-    padding: 30px 50px;
+    padding: 10vh 50px 30px;
     /* background-image: url("../../Assets/lightBlueBG.png");
     background-size: cover;
     background-repeat: no-repeat; */
@@ -26,12 +27,12 @@
     flex-direction: column;
     gap: 5px;
 }
-/* .contact_me h1{
+/* .contactPage h1{
     font-size: 4rem;
     position: relative;
 }
 
-.contact_me h1::after{
+.contactPage h1::after{
     position: absolute;
     bottom: -2px;
     left: 50%;
@@ -42,7 +43,7 @@
     background-color: var(--text-decoration-color);
 }
 
-.contact_me p{
+.contactPage p{
     font-size: 1.6rem;
     color: var(--secondary-color);
     opacity: 0.8;
@@ -103,12 +104,20 @@
 
 .contact_info .details{
     display: flex;
-    gap: 5px;
+    flex-direction: column;
+    gap: 20px;
     width: 100%;
     height: auto;
 }
 
-.details .icons, .details .icons_info{
+.details .iconWithInfo{
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    gap: 10px;
+}
+
+.iconWithInfo .icons, .iconWithInfo .icons_info{
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -207,7 +216,7 @@ form .subject{
     align-items: flex-start;
     justify-content:space-between ;
     gap: 10px;
-    /* border: 1px solid black; */
+    flex-wrap: wrap;
 }
 
 .subject label, .message label{
@@ -279,17 +288,17 @@ p.error{
 
 @media screen and (max-width: 1200px) 
 {
-    .contact_me h1{
+    .contactPage h1{
         font-size: 3.5rem;
     }
 
-    .contact_me .contact_form{
+    .contactPage .formContent{
         width: 95%;
         height: 500px;
         padding: 10px;
     }
 
-    .contact_me p{
+    .contactPage p{
         width: 95%;
     }
 
@@ -307,31 +316,34 @@ p.error{
     }
 }
 
-/* ------------ 985 screen styling part ------------ */
+/* ------------ 1000 screen styling part ------------ */
 
-@media screen and (max-width: 985px) 
+@media screen and (max-width: 1000px) 
 {
-    .contact_me{
+    .contactPage{
         gap: 25px;
-        padding: 30px 50px;
+        padding: 10vh 50px 30px;
     }
 
-    .contact_me h1{
+    .contactPage h1{
         font-size: 3.5rem;
     }
 
-    .contact_me .contact_form{
+    .contactPage .formContent{
         width: 100%;
-        height: 500px;
+        flex-direction: column;
+        height: auto;
         padding: 10px;
     }
 
-    .contact_me p{
-        width: 100%;
+    .formContent .contact_info{
+        gap: 150px;
+        width: 95%;
+        height: auto;
     }
 
-    .info{
-
+    .contactPage p{
+        width: 100%;
     }
 
     .icons{
@@ -341,43 +353,65 @@ p.error{
     .icons_info h2{
         font-size: 1.2rem;
     }
+
+    .formContent form{
+        gap: 25px;
+        width: 95%;
+        height: auto;
+    }
 }
 
 
-/* ------------ 768 screen styling part ------------ */
+/* ------------ 560 screen styling part ------------ */
 
-@media screen and (max-width: 768px) 
+@media screen and (max-width: 560px) 
 {
-    .contact_me{
+    .contactPage{
         gap: 25px;
-        padding: 30px 30px;
+        padding: 10vh 30px;
     }
 
-    .contact_info{
-        padding: 10px 15px !important;
+    .contactPage h1{
+        font-size: 32px;
+    }
+
+    .formContent .contact_info{
+        gap: 50px;
     }
 
     .info h2{
-        font-size: 2rem;
-    }    
-
+        font-size: 18px;
+    }
     .info p{
-        font-size: 1.4rem;
+        font-size: 12px;
     }
 
+    .form_details label span{
+        font-size: 16px;
+    }
 
+    .subject .options{
+        flex-wrap: wrap;
+    }
 
+    .icons_info h2{
+        font-size: 12px;
+    }
+
+    form .submit{
+        justify-content: center;
+    }
 }
 
 /* ------------ 678 screen styling part ------------ */
 
-@media screen and (max-width: 678px) 
+/* @media screen and (max-width: 678px) 
 {
-    .contact_me h1{
+    .contactPage h1{
         font-size: 3.2rem;
     }
 
-    .contact_me .contact_form{
+    .contactPage .formContent{
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
@@ -388,13 +422,13 @@ p.error{
         background-color: rgb(var(--contact-form-bg-color), 0.5);
     }
 
-    .contact_form .contact_info{
+    .formContent .contact_info{
         width: 100%;
         height: auto;
         padding: 50px !important;
     }
 
-    .contact_form form{
+    .formContent form{
         width: 100%;
         height: 65%;
         padding: 10px !important;
@@ -466,4 +500,4 @@ p.error{
         font-size: 1rem;
         height: 20px;
     }
-}
+} */

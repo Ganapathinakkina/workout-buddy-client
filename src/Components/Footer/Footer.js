@@ -38,18 +38,10 @@ const Footer = () => {
 
                 </div>
                 <div className="footerImg">
-                    {/* <Link to="/signup">
-                    <button>Let's Start</button>
-                </Link> */}
-                    {/* <img src={<FaYoutube/>} alt="" />
-                <img src={<FaYoutube/>} alt="" />
-                <img src={<FaSquareInstagram/>} alt="" />
-                <img src={<FaSquareXTwitter/>} alt="" /> */}
                     <FaYoutube className="footerIcons" />
                     <FaFacebookF className="footerIcons" />
                     <FaInstagram className="footerIcons" />
                     <FaXTwitter className="footerIcons" />
-
                 </div>
             </div>
             <div className="footerRights">

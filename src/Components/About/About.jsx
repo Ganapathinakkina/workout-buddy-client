@@ -56,19 +56,19 @@ const About = () => {
 
             <div className="missionContent">
                 <h3>Our Mission</h3>
-                <p>- Our mission is to empower individuals to lead healthier, stronger, and more active lives.</p>
-                <p>- We aim to provide a simple yet powerful tool that keeps you accountable and helps you crush
+                <p><div>-</div> Our mission is to empower individuals to lead healthier, stronger, and more active lives.</p>
+                <p><div>-</div> We aim to provide a simple yet powerful tool that keeps you accountable and helps you crush
                     your fitness goals.</p>
-                <p>- Join Workout Buddy today and take the next step in your fitness journey.</p>
-                <p>- Let’s get fit and stronger together!</p>
+                <p><div>-</div> Join Workout Buddy today and take the next step in your fitness journey.</p>
+                <p><div>-</div> Let’s get fit and stronger together!</p>
             </div>
             <div className="serviceContent">
                 <div className="content">
                     <h3>Services we Provide</h3>
-                    <p>- Get personalized workout plans tailored to your body measurements and fitness level.
+                    <p><div>-</div> Get personalized workout plans tailored to your body measurements and fitness level.
                         Whether you're following expert-designed routines.</p>
-                    <p>- creating your own custom workouts.</p>
-                    <p>- Workout Buddy empowers you to train the way you want – effectively and efficiently!</p>
+                    <p><div>-</div> creating your own custom workouts.</p>
+                    <p><div>-</div> Workout Buddy empowers you to train the way you want – effectively and efficiently!</p>
                 </div>
                 <div className="serviceCards">
                     <div className="card">
@@ -97,13 +97,13 @@ const About = () => {
                     </div>
                 </div>
                 <div className="content">
-                    <p>- We are constantly evolving to bring you more ways to stay healthy and fit.
+                    <p><div>-</div> We are constantly evolving to bring you more ways to stay healthy and fit.
                         In the near future, we will introduce:</p>
-                    <p>🧘‍♂️ <span>Yoga & Mindfulness –</span> Experience the benefits of yoga with guided sessions for
-                        flexibility, relaxation, and stress relief.</p>
-                    <p>🥗 <span>Personalized Diet Plans –</span> Get tailored food and nutrition recommendations based on
-                        your fitness goals and body requirements.</p>
-                    <p>- Join us on this exciting journey and take your fitness to the next level with Workout Buddy! 💪✨</p>
+                    <h6><span> 🧘‍♂️ Yoga & Mindfulness-</span>  Experience the benefits of yoga with guided sessions for
+                        flexibility, relaxation, and stress relief.</h6>
+                    <h6><span>🥗 Personalized Diet Plans- </span>  Get tailored food and nutrition recommendations based on
+                        your fitness goals and body requirements.</h6>
+                    <p><div>-</div> Join us on this exciting journey and take your fitness to the next level with Workout Buddy! 💪✨</p>
                 </div>
             </div>
         </div>

@@ -117,18 +117,33 @@ const Contact = () => {
             <p>Say something to start a live chat!</p>
           </div>
           <div className="details">
-            <div className="icons">
-              <PiPhoneCallFill size={isSmallScreen ? 19 : 22} />
-              <MdEmail size={isSmallScreen ? 19 : 22} />
-              <MdLocationOn size={isSmallScreen ? 23 : 26} />
+            <div className="iconWithInfo">
+              <div className="icons">
+                <PiPhoneCallFill size={isSmallScreen ? 19 : 22} />
+              </div>
+              <div className="icons_info">
+                <h2>+91 9133036250</h2>
+              </div>
             </div>
-            <div className="icons_info">
-              <h2>+91 9133036250</h2>
-              <h2>gananakkina@gmail.com</h2>
-              <h2>Madhapur, Hyderabad, Telangana, 500081, India</h2>
+            <div className="iconWithInfo">
+              <div className="icons">
+                <MdEmail size={isSmallScreen ? 19 : 22} />
+              </div>
+              <div className="icons_info">
+                <h2>gananakkina@gmail.com</h2>
+              </div>
+            </div>
+            <div className="iconWithInfo">
+              <div className="icons">
+                <MdLocationOn size={isSmallScreen ? 23 : 26} />
+              </div>
+              <div className="icons_info">
+                <h2>Madhapur, Hyderabad, Telangana, 500081, India</h2>
+              </div>
             </div>
           </div>
         </div>
+
         <form onSubmit={handleSubmit} >
           <div className="form_details">
             <label htmlFor="first_name">
@@ -156,9 +171,9 @@ const Contact = () => {
           <div className="subject">
             <label htmlFor="">Subject: </label>
             <div className="options">
-              <label><input id="subject-project-inquiry" name="subject" type="radio" value="Project Inquiry" onChange={handleChange} /><span>Project Inquiry</span></label>
-              <label><input id="subject-collaboration" name="subject" type="radio" value="Collaboration Opportunity" onChange={handleChange} /><span>Collaboration Opportunity</span></label>
-              <label><input id="subject-feedback" name="subject" type="radio" value="Feedback or Suggestions" onChange={handleChange} /><span>Feedback or Suggestions</span></label>
+              <label><input id="subject-project-inquiry" name="subject" type="radio" value="Workout Inquiry" onChange={handleChange} /><span>Workout Inquiry</span></label>
+              <label><input id="subject-collaboration" name="subject" type="radio" value="Collaboration" onChange={handleChange} /><span>Collaboration</span></label>
+              <label><input id="subject-feedback" name="subject" type="radio" value="Feedback" onChange={handleChange} /><span>Feedback</span></label>
               <label><input id="subject-general-inquiry" name="subject" type="radio" value="General Inquiry" onChange={handleChange} />General Inquiry</label>
             </div>
             {errors.subject && <p className="error">{errors.subject}</p>}
@@ -187,7 +202,8 @@ const Contact = () => {
           )}
         </form>
       </div>
-    </div>
+    </div >
+
   )
 }
 
