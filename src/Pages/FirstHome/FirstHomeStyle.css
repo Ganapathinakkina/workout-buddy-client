@@ -1,18 +1,18 @@
 
 .firstHome{
     width: 100%;
-    height: 90vh;
+    /* height: 90vh; */
     /* background-image: url("../../Assets/firstHomeBg.png");
     background-size: cover;
     background-repeat: no-repeat; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5%;
+    padding: 11vh 5% 5%;
 }
 
 .firstHome .content{
-    width: 35%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -58,31 +58,23 @@
     transition: 0.3s;
     cursor: pointer;
     background-color:deeppink;
-    color: white;
-    /* background-image: linear-gradient(to right, rgba(154,108,50,255), rgba(232,217,140,255), 
-    rgba(149,101,44,255)); */
-
-    /* background-image: linear-gradient(to right, rgb(168, 217, 255), white, 
-    rgb(168, 217, 255));
-    box-shadow: 0px 0px 5px 0.5px #3e41d8;
-    color: rgb(1, 1, 148); */
-
-    /* background-color: rgb(1, 103, 228); */
-    /* background-color: #e7195a; */  
+    color: white; 
 }
+
 .firstHome .content a button:hover{
     transform: scale(1.08);
-    /* box-shadow: 0px 0px 5px 1.5px #3e41d8; */
 }
 
 .firstHome .content .firstHomeImg-resp{
     display: none;
 }
 .firstHome .firstHomeImg{
-    width: 45%;
+    width: 40%;
+    height: auto;
 }
 .firstHome .firstHomeImg img{
     width: 100%;
+    height: 100%;
     border-radius: 5px;
     border: 7px double rgb(0, 72, 255);
 }
@@ -99,7 +91,7 @@
 
     .firstHome{
         justify-content: center;
-        padding: 2%;
+        padding: 11vh 2% 4%;
     }
     .firstHome .content{
         width: 100%;

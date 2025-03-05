@@ -2,12 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: auto;
+padding: 14vh 10px 50px;
     flex-direction: column;
-    /* background-image: url("../../Assets/loginBg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat; */
-
 }
 
 .main-form form {

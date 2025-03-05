@@ -124,9 +124,9 @@ form .updateBtn:hover{
 
 .submitMsg, .updateMsg {
     position: absolute;
-    left: 36%;
-    bottom: 3vh;
-    width: 25%;
+    left: 30%;
+    bottom: 4vh;
+    width: 35%;
     height: 40px;
     background-color: rgba(18, 212, 18, 0.79);
     display: flex;
@@ -183,7 +183,7 @@ form .updateBtn:hover{
     }
     .submitMsg, .updateMsg {
         left: 10%;
-        width: 85%;
+        width: 90%;
         height: 50px;
     }
 }
@@ -205,5 +205,10 @@ form .updateBtn:hover{
         outline: none;
         padding: 6px 15px;
         font-size: 12px;
+    }
+    .submitMsg, .updateMsg {
+        left: 7%;
+        width: 90%;
+        height: 50px;
     }
 }

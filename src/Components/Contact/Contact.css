@@ -288,10 +288,6 @@ p.error{
 
 @media screen and (max-width: 1200px) 
 {
-    .contactPage h1{
-        font-size: 3.5rem;
-    }
-
     .contactPage .formContent{
         width: 95%;
         height: 500px;
@@ -323,10 +319,6 @@ p.error{
     .contactPage{
         gap: 25px;
         padding: 10vh 50px 30px;
-    }
-
-    .contactPage h1{
-        font-size: 3.5rem;
     }
 
     .contactPage .formContent{

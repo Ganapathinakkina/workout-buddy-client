@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10vh 30px 30px;
+    padding: 11vh 30px 50px;
     /* border-top: 1px solid #030066; */
     gap: 50px;
     background-image: url("../../Assets/lightBlueBG.png");
@@ -17,7 +17,6 @@
     /* color: rgb(224, 155, 25); */
     color: rgb(9, 26, 46);
     font-family: 'Times New Roman', Times, serif;
-
 }
 
 .aboutPage .aboutContent {

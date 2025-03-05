@@ -1,13 +1,13 @@
 .suggestion {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     /* gap: 10px; */
     text-align: center;
-    padding: 60px 10px 10px;
+    padding: 11vh 10px 10px;
 }
 
 .suggestion h1 {
@@ -39,6 +39,7 @@
     align-items: center;
     gap: 40px;
     padding: 10px;
+    box-shadow: 0 0 20px 2px rgba(1, 52, 107, 0.142);
     /* border: 1px solid black; */
     overflow-y: auto;
     scrollbar-width: none; 
@@ -51,12 +52,12 @@
 
 .workoutList .card {
     width: 240px;
-    height: 300px;
+    height: 320px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    padding: 10px;
-    /* border: 0.5px solid #03265a; */
+    padding: 10px 5px;
+    border: 0.5px solid #03265a;
     box-shadow: 10px 10px 20px  rgba(1, 39, 61, 0.505);
     /* background-color: rgba(239, 212, 212, 0.61); */
     background-color: #9ac4fb;
@@ -91,10 +92,10 @@
 }
 
 .card .cardLabel h2{
-    font-size: 18px;
+    font-size: 16px;
 }
 .card .cardLabel p{
-    font-size: 16px;
+    font-size: 14px;
 }
 
 
@@ -129,11 +130,9 @@
     transform: scale(1.1);
 }
 
-@media(max-width:1200px){
-    .suggestion {
-        padding: 100px 10px 10px;
-    }
-}
+/* @media(max-width:1200px){
+
+} */
 
 @media(max-width:400px){
     .suggestion h1 {
