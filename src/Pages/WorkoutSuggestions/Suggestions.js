@@ -33,9 +33,9 @@ const Suggestions = () => {
 
         e.preventDefault();
         const workoutIds = [];
-        selections.map((s) => {
+        selections.forEach((s) => {
             workoutIds.push(s);
-        })
+        });
 
         const payload = { workoutIds };
 
@@ -48,7 +48,7 @@ const Suggestions = () => {
             console.log("Payload:", payload);
 
             try {
-                const response = await axios.put("https://v0-workout-buddy-server.vercel.app/api/user/update-user-workouts", payload, {
+                 await axios.put("https://v0-workout-buddy-server.vercel.app/api/user/update-user-workouts", payload, {
                     headers: {
                         "Authorization": `Bearer ${user.token}`
                     }
@@ -75,7 +75,7 @@ const Suggestions = () => {
         const localSuggestions = JSON.parse(localStorage.getItem("suggestions"));
         setWorkoutSuggestions(localSuggestions)
 
-    }, [])
+    }, [setWorkoutSuggestions])
 
     const onSkipHandler = () => {
         navigation("/home");
@@ -95,7 +95,7 @@ const Suggestions = () => {
 
                                 <label htmlFor={_id} className='cardLabel'>
                                     <div className="cardImg">
-                                        <img src={image_blob} alt="Workout image" />
+                                        <img src={image_blob} alt={title} />
                                     </div>
                                     <h2>{title}</h2>
                                     <p>Reps: {reps}</p>

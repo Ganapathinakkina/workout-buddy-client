@@ -35,7 +35,7 @@ const WorkoutContext = ({ children }) => {
         console.error("API Error:", error);
       }
     }
-  }, [user]); // Memoized function depends only on 'user'
+  }, [user, logout]); // Memoized function depends only on 'user'
 
 
   //POST REQUEST STATE
