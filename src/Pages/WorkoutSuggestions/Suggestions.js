@@ -26,7 +26,7 @@ const Suggestions = () => {
     useEffect(() => {
         console.log("Updated List of Ids:", selections);
         workoutSuggestions.push()
-    }, [selections]);
+    }, [selections, workoutSuggestions]);
 
 
     const onSubmitHandler = async (e) => {

@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import "./UserInputStyle.css"
 import axios from "axios"
 import { useAuthContext } from "../../Hooks/useAuthContext"
 import { Data } from "../../Context/WorkoutContext"
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useLogout } from "../../Hooks/useLogout"
 
 

@@ -1,13 +1,10 @@
 import "./EntryStyle.css"
-// import GymEntryImg from "../../Assets/gymEntryPage.jpg"
 import EntryImg from "../../Assets/EntryImg.png"
 
 import { Link } from "react-router-dom"
-import FirstHome from "../FirstHome/FirstHome"
-import Signup from "../Signup/Signup"
+
 import { useAuthContext } from "../../Hooks/useAuthContext"
-import About from "../../Components/About/About"
-import Contact from "../../Components/Contact/Contact"
+
 
 
 const Entry = () => {
