@@ -10,7 +10,7 @@ export const useSignup = ()=>{
     const signup = async (email, password)=>{
         setError(null);
 
-        const response = await fetch("http://localhost:5000/api/user/signup", {
+        const response = await fetch("https://v0-workout-buddy-server.vercel.app/api/user/signup", {
             method: "POST",
             headers:{"Content-type": "application/json"},
             body: JSON.stringify({email,password}),

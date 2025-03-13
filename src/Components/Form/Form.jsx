@@ -29,7 +29,7 @@ const Form = () => {
   const createWorkout = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/workouts", form, {
+      const response = await axios.post("https://v0-workout-buddy-server.vercel.app/api/workouts", form, {
         headers: {
           "Authorization": `Bearer ${user.token}`
         }
@@ -75,7 +75,7 @@ const Form = () => {
     const { _id, title, reps, load, isCustomWorkout } = updateForm;
 
     try {
-      await axios.patch(`http://localhost:5000/api/workouts/${_id}`, { title, reps, load, isCustomWorkout }, {
+      await axios.patch(`https://v0-workout-buddy-server.vercel.app/api/workouts/${_id}`, { title, reps, load, isCustomWorkout }, {
         headers: {
           "Authorization": `Bearer ${user.token}`
         }

@@ -21,7 +21,7 @@ const WorkoutContext = ({ children }) => {
   const getWorkouts = useCallback(async () => {
 
     try {
-      const response = await axios.get("http://localhost:5000/api/workouts", {
+      const response = await axios.get("https://v0-workout-buddy-server.vercel.app/api/workouts", {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -75,7 +75,7 @@ const WorkoutContext = ({ children }) => {
   const deleteWorkout = async (_id, isCustomWorkout) => {
     const payload = { workoutId: _id, isCustomWorkout: isCustomWorkout };
     try {
-      await axios.delete(`http://localhost:5000/api/workouts`, {
+      await axios.delete(`https://v0-workout-buddy-server.vercel.app/api/workouts`, {
         data: payload,
         headers: {
           "Authorization": `Bearer ${user.token}`

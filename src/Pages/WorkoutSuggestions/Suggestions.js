@@ -48,7 +48,7 @@ const Suggestions = () => {
             console.log("Payload:", payload);
 
             try {
-                const response = await axios.put("http://localhost:5000/api/user/update-user-workouts", payload, {
+                const response = await axios.put("https://v0-workout-buddy-server.vercel.app/api/user/update-user-workouts", payload, {
                     headers: {
                         "Authorization": `Bearer ${user.token}`
                     }

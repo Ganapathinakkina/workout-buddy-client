@@ -37,7 +37,7 @@ const UserInputs = () => {
 
 
         try {
-            const response = await axios.post("http://localhost:5000/api/user/userinputs", userInputData, {
+            const response = await axios.post("https://v0-workout-buddy-server.vercel.app/api/user/userinputs", userInputData, {
                 headers: {
                     "Authorization": `Bearer ${user.token}`
                 }
